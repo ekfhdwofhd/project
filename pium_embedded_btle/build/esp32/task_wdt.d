@@ -23,7 +23,7 @@ task_wdt.o: /home/jake/pium/esp/esp-idf/components/esp32/./task_wdt.c \
  /home/jake/pium/esp/esp-idf/components/newlib/include/alloca.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/string.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/string.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
@@ -119,7 +119,7 @@ task_wdt.o: /home/jake/pium/esp/esp-idf/components/esp32/./task_wdt.c \
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/sys/string.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 

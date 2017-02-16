@@ -1,4 +1,4 @@
-gatts_demo.o: /home/jake/pium/pium_embedded_btle/main/./gatts_demo.c \
+gatts_demo.o: /home/jake/pium/jake/pium_embedded_btle/main/./gatts_demo.c \
  /home/jake/pium/esp/esp-idf/components/newlib/include/stdio.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/_ansi.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/newlib.h \
@@ -25,7 +25,7 @@ gatts_demo.o: /home/jake/pium/pium_embedded_btle/main/./gatts_demo.c \
  /home/jake/pium/esp/esp-idf/components/newlib/include/stdint.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -139,9 +139,9 @@ gatts_demo.o: /home/jake/pium/pium_embedded_btle/main/./gatts_demo.c \
  /home/jake/pium/esp/esp-idf/components/bt/bluedroid/api/include/esp_gatt_defs.h \
  /home/jake/pium/esp/esp-idf/components/bt/bluedroid/api/include/esp_bt_defs.h \
  /home/jake/pium/esp/esp-idf/components/bt/bluedroid/api/include/esp_bt_main.h \
- /home/jake/pium/pium_embedded_btle/main/include/timer_interface.h \
- /home/jake/pium/pium_embedded_btle/main/include/timer_platform.h \
- /home/jake/pium/pium_embedded_btle/main/include/timer_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/main/include/timer_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/main/include/timer_platform.h \
+ /home/jake/pium/jake/pium_embedded_btle/main/include/timer_interface.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_wifi.h \
  /home/jake/pium/esp/esp-idf/components/driver/include/driver/ledc.h \
  /home/jake/pium/esp/esp-idf/components/driver/include/driver/periph_ctrl.h \
@@ -149,17 +149,17 @@ gatts_demo.o: /home/jake/pium/pium_embedded_btle/main/./gatts_demo.c \
  /home/jake/pium/esp/esp-idf/components/newlib/include/ctype.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/unistd.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/unistd.h \
- /home/jake/pium/pium_embedded_btle/main/./certs.h \
- /home/jake/pium/pium_embedded_btle/main/include/aws_iot_config.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_log.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_version.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client_interface.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_error.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/network_interface.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_error.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/timer_interface.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h \
+ /home/jake/pium/jake/pium_embedded_btle/main/./certs.h \
+ /home/jake/pium/jake/pium_embedded_btle/main/include/aws_iot_config.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_log.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_version.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_error.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/network_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_error.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/timer_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/config.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/platform.h \
@@ -243,7 +243,7 @@ gatts_demo.o: /home/jake/pium/pium_embedded_btle/main/./gatts_demo.c \
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
@@ -471,11 +471,11 @@ gatts_demo.o: /home/jake/pium/pium_embedded_btle/main/./gatts_demo.c \
 
 /home/jake/pium/esp/esp-idf/components/bt/bluedroid/api/include/esp_bt_main.h:
 
-/home/jake/pium/pium_embedded_btle/main/include/timer_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/main/include/timer_interface.h:
 
-/home/jake/pium/pium_embedded_btle/main/include/timer_platform.h:
+/home/jake/pium/jake/pium_embedded_btle/main/include/timer_platform.h:
 
-/home/jake/pium/pium_embedded_btle/main/include/timer_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/main/include/timer_interface.h:
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/esp_wifi.h:
 
@@ -491,27 +491,27 @@ gatts_demo.o: /home/jake/pium/pium_embedded_btle/main/./gatts_demo.c \
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/sys/unistd.h:
 
-/home/jake/pium/pium_embedded_btle/main/./certs.h:
+/home/jake/pium/jake/pium_embedded_btle/main/./certs.h:
 
-/home/jake/pium/pium_embedded_btle/main/include/aws_iot_config.h:
+/home/jake/pium/jake/pium_embedded_btle/main/include/aws_iot_config.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_log.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_log.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_version.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_version.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client_interface.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_error.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_error.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_mqtt_client.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/network_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/network_interface.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_error.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_error.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/timer_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/timer_interface.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h:
 
 /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/config.h:
 

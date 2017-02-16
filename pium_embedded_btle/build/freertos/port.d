@@ -25,7 +25,7 @@ port.o: /home/jake/pium/esp/esp-idf/components/freertos/./port.c \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/config/system.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/simcall.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
@@ -107,7 +107,7 @@ port.o: /home/jake/pium/esp/esp-idf/components/freertos/./port.c \
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

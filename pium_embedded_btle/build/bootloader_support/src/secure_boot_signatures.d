@@ -1,6 +1,6 @@
 src/secure_boot_signatures.o: \
  /home/jake/pium/esp/esp-idf/components/bootloader_support/src/secure_boot_signatures.c \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/bootloader_support/include_priv/bootloader_flash.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/stdint.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -27,7 +27,7 @@ src/secure_boot_signatures.o: \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_types.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/cdefs.h
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/bootloader_support/include_priv/bootloader_flash.h:
 

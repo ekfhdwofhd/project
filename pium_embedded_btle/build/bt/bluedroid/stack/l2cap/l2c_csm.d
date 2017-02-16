@@ -30,7 +30,7 @@ bluedroid/stack/l2cap/l2c_csm.o: \
  /home/jake/pium/esp/esp-idf/components/bt/bluedroid/stack/include/dyn_mem.h \
  /home/jake/pium/esp/esp-idf/components/bt/bluedroid/include/bt_trace.h \
  /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h \
  /home/jake/pium/esp/esp-idf/components/bt/bluedroid/gki/include/gki.h \
@@ -152,7 +152,7 @@ bluedroid/stack/l2cap/l2c_csm.o: \
 
 /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

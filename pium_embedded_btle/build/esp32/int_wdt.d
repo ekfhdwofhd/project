@@ -1,5 +1,5 @@
 int_wdt.o: /home/jake/pium/esp/esp-idf/components/esp32/./int_wdt.c \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/stdint.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/machine/_default_types.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/features.h \
@@ -65,7 +65,7 @@ int_wdt.o: /home/jake/pium/esp/esp-idf/components/esp32/./int_wdt.c \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_intr_alloc.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_int_wdt.h
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/stdint.h:
 

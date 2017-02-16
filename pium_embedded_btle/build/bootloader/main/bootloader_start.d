@@ -2,7 +2,7 @@ bootloader_start.o: \
  /home/jake/pium/esp/esp-idf/components/bootloader/src/main/./bootloader_start.c \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_attr.h \
  /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h \
- /home/jake/pium/pium_embedded_btle/build/bootloader/../include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/bootloader/../include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/cache.h \
@@ -42,7 +42,7 @@ bootloader_start.o: \
 
 /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/jake/pium/pium_embedded_btle/build/bootloader/../include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/bootloader/../include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

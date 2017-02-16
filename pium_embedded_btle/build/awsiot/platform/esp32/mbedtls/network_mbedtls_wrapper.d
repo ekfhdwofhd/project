@@ -1,5 +1,5 @@
 platform/esp32/mbedtls/network_mbedtls_wrapper.o: \
- /home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_mbedtls_wrapper.c \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_mbedtls_wrapper.c \
  /home/jake/pium/esp/esp-idf/components/newlib/include/string.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/_ansi.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/newlib.h \
@@ -15,14 +15,14 @@ platform/esp32/mbedtls/network_mbedtls_wrapper.o: \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/lock.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/string.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/common/timer_platform.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/timer_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/common/timer_platform.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/timer_interface.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/stdint.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/_intsup.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/network_interface.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_error.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/timer_interface.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/network_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_error.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/timer_interface.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/config.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/limits.h \
@@ -65,7 +65,7 @@ platform/esp32/mbedtls/network_mbedtls_wrapper.o: \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/timing.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -90,8 +90,8 @@ platform/esp32/mbedtls/network_mbedtls_wrapper.o: \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/mpu_wrappers.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/task.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/list.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_log.h \
- /home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_log.h \
+ /home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/string.h:
 
@@ -123,21 +123,21 @@ platform/esp32/mbedtls/network_mbedtls_wrapper.o: \
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/sys/string.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/common/timer_platform.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/common/timer_platform.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/timer_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/timer_interface.h:
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/stdint.h:
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/network_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/network_interface.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_error.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_error.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/timer_interface.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/timer_interface.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h:
 
 /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/config.h:
 
@@ -223,7 +223,7 @@ platform/esp32/mbedtls/network_mbedtls_wrapper.o: \
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
@@ -273,6 +273,6 @@ platform/esp32/mbedtls/network_mbedtls_wrapper.o: \
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/list.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/include/aws_iot_log.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/include/aws_iot_log.h:
 
-/home/jake/pium/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h:
+/home/jake/pium/jake/pium_embedded_btle/components/awsiot/platform/esp32/mbedtls/network_platform.h:

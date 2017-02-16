@@ -29,7 +29,7 @@ port/esp_bignum.o: \
  /home/jake/pium/esp/esp-idf/components/mbedtls/port/include/mbedtls/bignum.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/bignum.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/stdint.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -142,7 +142,7 @@ port/esp_bignum.o: \
 
 /home/jake/pium/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h:
 

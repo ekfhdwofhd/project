@@ -1,7 +1,7 @@
 library/aesni.o: \
  /home/jake/pium/esp/esp-idf/components/mbedtls/library/aesni.c \
  /home/jake/pium/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/limits.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/newlib.h \
@@ -30,7 +30,7 @@ library/aesni.o: \
 
 /home/jake/pium/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h:
 

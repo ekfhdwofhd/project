@@ -27,7 +27,7 @@ deep_sleep.o: /home/jake/pium/esp/esp-idf/components/esp32/./deep_sleep.c \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/gpio.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_intr_alloc.h \
  /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/cache.h \
@@ -128,7 +128,7 @@ deep_sleep.o: /home/jake/pium/esp/esp-idf/components/esp32/./deep_sleep.c \
 
 /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

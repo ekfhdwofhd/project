@@ -21,7 +21,7 @@ brownout.o: /home/jake/pium/esp/esp-idf/components/esp32/./brownout.c \
  /home/jake/pium/esp/esp-idf/components/newlib/include/stdlib.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/alloca.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/rtc_cntl_reg.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h
@@ -70,7 +70,7 @@ brownout.o: /home/jake/pium/esp/esp-idf/components/esp32/./brownout.c \
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/alloca.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h:
 

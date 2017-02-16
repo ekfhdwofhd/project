@@ -21,7 +21,7 @@ src/flash_encrypt.o: \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/assert.h \
  /home/jake/pium/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/bootloader_support/include_priv/bootloader_random.h \
  /home/jake/pium/esp/esp-idf/components/bootloader_support/include/esp_image_format.h \
  /home/jake/pium/esp/esp-idf/components/bootloader_support/include/esp_flash_encrypt.h \
@@ -82,7 +82,7 @@ src/flash_encrypt.o: \
 
 /home/jake/pium/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/bootloader_support/include_priv/bootloader_random.h:
 

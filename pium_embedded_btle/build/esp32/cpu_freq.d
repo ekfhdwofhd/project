@@ -12,7 +12,7 @@ cpu_freq.o: /home/jake/pium/esp/esp-idf/components/esp32/./cpu_freq.c \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/uart_reg.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/esp32/./phy.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_phy_init.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_err.h \
@@ -51,7 +51,7 @@ cpu_freq.o: /home/jake/pium/esp/esp-idf/components/esp32/./cpu_freq.c \
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/esp32/./phy.h:
 

@@ -33,7 +33,7 @@ emac_dev.o: /home/jake/pium/esp/esp-idf/components/ethernet/./emac_dev.c \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/emac_reg_v2.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/emac_ex_reg.h \
  /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/driver/include/driver/gpio.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/assert.h \
@@ -114,7 +114,7 @@ emac_dev.o: /home/jake/pium/esp/esp-idf/components/ethernet/./emac_dev.c \
 
 /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/driver/include/driver/gpio.h:
 

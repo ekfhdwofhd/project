@@ -29,7 +29,7 @@ vfs_uart.o: /home/jake/pium/esp/esp-idf/components/vfs/./vfs_uart.c \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_attr.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/errno.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/uart_struct.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/string.h:
 
@@ -91,4 +91,4 @@ vfs_uart.o: /home/jake/pium/esp/esp-idf/components/vfs/./vfs_uart.c \
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/soc/uart_struct.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:

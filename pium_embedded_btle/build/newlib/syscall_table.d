@@ -41,7 +41,7 @@ syscall_table.o: \
  /home/jake/pium/esp/esp-idf/components/newlib/include/dirent.h \
  /home/jake/pium/esp/esp-idf/components/vfs/include/sys/dirent.h \
  /home/jake/pium/esp/esp-idf/components/newlib/platform_include/esp_newlib.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h
 
 /home/jake/pium/esp/esp-idf/components/newlib/include/string.h:
 
@@ -125,4 +125,4 @@ syscall_table.o: \
 
 /home/jake/pium/esp/esp-idf/components/newlib/platform_include/esp_newlib.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:

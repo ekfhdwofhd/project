@@ -21,7 +21,7 @@ port/freertos/sys_arch.o: \
  /home/jake/pium/esp/esp-idf/components/lwip/include/lwip/port/arch/sys_arch.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -119,7 +119,7 @@ port/freertos/sys_arch.o: \
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

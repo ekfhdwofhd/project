@@ -27,7 +27,7 @@ bluedroid/bta/sys/utl.o: \
  /home/jake/pium/esp/esp-idf/components/newlib/include/machine/types.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/stdio.h \
  /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/soc/soc.h \
  /home/jake/pium/esp/esp-idf/components/bt/bluedroid/gki/include/gki_common.h \
@@ -126,7 +126,7 @@ bluedroid/bta/sys/utl.o: \
 
 /home/jake/pium/esp/esp-idf/components/log/include/esp_log.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

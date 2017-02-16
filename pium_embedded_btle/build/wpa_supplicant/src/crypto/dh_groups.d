@@ -40,7 +40,7 @@ src/crypto/dh_groups.o: \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/_default_fcntl.h \
  /home/jake/pium/esp/esp-idf/components/newlib/include/sys/stat.h \
  /home/jake/pium/esp/esp-idf/components/esp32/include/esp_task.h \
- /home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h \
+ /home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h \
  /home/jake/pium/esp/esp-idf/components/lwip/include/lwip/lwip/debug.h \
  /home/jake/pium/esp/esp-idf/components/lwip/include/lwip/lwip/arch.h \
  /home/jake/pium/esp/esp-idf/components/lwip/include/lwip/port/arch/cc.h \
@@ -162,7 +162,7 @@ src/crypto/dh_groups.o: \
 
 /home/jake/pium/esp/esp-idf/components/esp32/include/esp_task.h:
 
-/home/jake/pium/pium_embedded_btle/build/include/sdkconfig.h:
+/home/jake/pium/jake/pium_embedded_btle/build/include/sdkconfig.h:
 
 /home/jake/pium/esp/esp-idf/components/lwip/include/lwip/lwip/debug.h:
 
