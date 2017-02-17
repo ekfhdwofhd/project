@@ -43,9 +43,6 @@
 
 #define GATTS_TAG "GATTS_DEMO"
 
-//////led////////////
-
-
 
 
 #include "freertos/xtensa_api.h"
@@ -60,7 +57,6 @@
 
 
 #define MINIMUM_DIFFUSING_INTERVAL_MS 500 //0.5second
-//////led end////////
 
 #define ONE_MINUTE 60
 
@@ -158,9 +154,7 @@ static bool gl_sta_connected = false;
 static uint8_t gl_sta_bssid[6];
 static uint8_t gl_sta_ssid[32];
 static int gl_sta_ssid_len;
-
-static wifi_config_t sta_config;
-////////////////////aws////////////////////
+static wifi_config_t wifi_config;
 
 #include <ctype.h>
 #include <unistd.h>
@@ -187,16 +181,13 @@ Timer wifi_disconnect_timeout;
 
 static EventGroupHandle_t wifi_event_group;
 
-  size_t required_size_ssid = 0;
-  size_t required_size_pass = 0;
+size_t required_size_ssid = 0;
+size_t required_size_pass = 0;
 
-    nvs_handle my_handle;
-    esp_err_t err;
+nvs_handle my_handle;
+esp_err_t err;
     
 static int wifi_disconnect_count = 0;
-//~ #define WIFI_SSID "CREATIVE@33-2.4"
-//~ #define WIFI_PASS "creative44"
-/////////////////////////////////////////////////////aws end
 
 
 void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
@@ -281,7 +272,13 @@ void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, ui
 		case 0xD ://테스트용 , nvs reset and reboot
 			IOT_INFO("Command D:\n nvs_erase_all");
 			nvs_erase_all(my_handle);
-			esp_restart();
+			fflush(stdout);
+				
+			 for (int i = 5; i >= 0; i--) {
+				printf("Restarting in %d seconds...\n", i);
+				vTaskDelay(1000 / portTICK_RATE_MS);
+			}
+				esp_restart();//reboot.	
 			break;    
 			       
         default: IOT_INFO("Wrong command!!");
@@ -410,9 +407,6 @@ void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, ui
     IOT_ERROR("Escaped loop...\n");
     abort();
 }
- 
-
-
 
 
 static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param){
@@ -461,170 +455,49 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
         
         ESP_LOGI(GATTS_TAG, "Text received: %s\n",param->write.value);
        
-       // char *token = NULL;
-         
-		//char str1[] = "This is\tTest,Program!\n";
-	//	char token_separation[] = " ,\t\n";//' '이나 ','이나 '\t'이나 '\n'이 들어있는 문자열을 분리
-	 
-	//	token = strtok( in_payload, token_separation );
-	 
-		printf("param: %d , param->write %d ,param->write.value: %d\n",sizeof(param),sizeof(param->write),sizeof(param->write.value));
-		
-		
-       //~ esp_wifi_set_config(WIFI_IF_STA, &sta_config);  
-      wifi_config_t wifi_config;
-       //~ wifi_config_t wifi_config = {
-        //~ .sta = {
-        //~ .ssid ="",//= WIFI_SSID, 
-        //~ .password =""//= WIFI_PASS,
-        //~ },
-    //~ };
-    
-    
-    
-    
-    
-    
-   
-		
-          
-          
-          char store_option[2]={0,};
-          char op_parsing;
-          strncpy(store_option, &in_payload[0], 1);
-          op_parsing = (char)strtol(store_option, NULL, 16);
-          switch(op_parsing){
-			  case 0xA : 
-			         strncpy((char *)wifi_config.sta.ssid, &in_payload[1], param->write.len);
-			         //strcpy((char *)wifi_config.sta.ssid, (char *)in_payload);
-			//~ op_parsing = (char)strtol(store_option, NULL, 16);
-			//strcpy((char *)wifi_config.sta.ssid, (char *)in_payload);
-						
-						     
-    
-			  err = nvs_set_str(my_handle, "ssid", (char *)wifi_config.sta.ssid); //nvs setting.
+		char store_option[2]={0,};
+		char op_parsing;
+		strncpy(store_option, &in_payload[0], 1);
+		op_parsing = (char)strtol(store_option, NULL, 16);
+		switch(op_parsing){
+		case 0xA : 		 
+			strncpy((char *)wifi_config.sta.ssid, &in_payload[1], param->write.len);
+			err = nvs_set_str(my_handle, "ssid", (char *)wifi_config.sta.ssid);
+
+			printf( "ssid = %s\n", wifi_config.sta.ssid );
+			printf( "passwd = %s\n", wifi_config.sta.password );	
+		break;
+
+		case 0xB :
+			err = nvs_get_str(my_handle, "ssid", NULL, &required_size_ssid);//get required_size_ssid
+			if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err; 		
+			err = nvs_get_str(my_handle, "pass", NULL, &required_size_pass);        
+			if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
+
+			memset(&wifi_config,0,sizeof(wifi_config));
+
+			char* my_ssid = malloc(required_size_ssid);
 			
-					printf( "ssid = %s\n", wifi_config.sta.ssid );
-			  		printf( "passwd = %s\n", wifi_config.sta.password );	
-			  		//~ ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
-					//~ ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
-					//~ ESP_ERROR_CHECK( esp_wifi_start() ); 
-			  break;
-			  
-			  case 0xB :
-				memset(&wifi_config,0,sizeof(wifi_config));
-				
-				  char* my_ssid = malloc(required_size_ssid);
-				 err = nvs_get_str(my_handle, "ssid", my_ssid, &required_size_ssid);//get ssid
-				  if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
-					strcpy((char *)wifi_config.sta.ssid, (char *)my_ssid); 
-				   strncpy((char *)wifi_config.sta.password, &in_payload[1], param->write.len);
-				//  strcpy((char *)wifi_config.sta.password, (char *)in_payload);
-		
-					//~ err = nvs_set_str(my_handle, "pass", (char *)wifi_config.sta.password);
-		
-					nvs_commit(my_handle);//Write any pending changes to non-volatile storage
-					nvs_close(my_handle);
-					printf( "ssid = %s\n", wifi_config.sta.ssid );
-			  		printf( "passwd = %s\n", wifi_config.sta.password );
-   // fprintf(stderr, "Setting WiFi configuration SSID %s...\n", wifi_config.sta.ssid);
-					ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
-					ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
-					ESP_ERROR_CHECK( esp_wifi_start() ); 
-			  break;
-			  
-			  default:
-				printf("Wrong option!");
-			  break;
-		  }
-			  
-			  //~ }
-          //~ if(store_option=="1"){
-			        //~ err = nvs_set_str(my_handle, "ssid", (char *)wifi_config.sta.ssid); //nvs setting.
-			
-					//~ printf( "ssid = %s\n", wifi_config.sta.ssid );
-			  		//~ printf( "passwd = %s\n", wifi_config.sta.password );			  }
-			  
-		  //~ else{
-					//~ err = nvs_set_str(my_handle, "pass", (char *)wifi_config.sta.password);
-		
-					//~ nvs_commit(my_handle);//Write any pending changes to non-volatile storage
-					//~ nvs_close(my_handle);
-					//~ printf( "ssid = %s\n", wifi_config.sta.ssid );
-			  		//~ printf( "passwd = %s\n", wifi_config.sta.password );
-   //~ // fprintf(stderr, "Setting WiFi configuration SSID %s...\n", wifi_config.sta.ssid);
-					//~ ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
-					//~ ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
-					//~ ESP_ERROR_CHECK( esp_wifi_start() ); 
-			  //~ }
-          
-    
-       
-        //#define WIFI_PASS "creative44"
-		//strcpy((char *)sta_config.sta.password, "creative44");
-       
-        //~ token = strtok( NULL, token_separation );
-    
-        //~ strcpy((char *)sta_config.sta.password, (char *)token);
+			err = nvs_get_str(my_handle, "ssid", my_ssid, &required_size_ssid);//get ssid
+			if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err; 
 
+			strcpy((char *)wifi_config.sta.ssid, (char *)my_ssid); 
+			strncpy((char *)wifi_config.sta.password, &in_payload[1], param->write.len);
 
-       
-       
-        //~ char command[2]={0,};
-        //~ char repeat[3]={0,};
-        //~ char schedule[9]={0,};
-        //~ char params1[3]={0,};
-        //~ char params2[3]={0,};
-        //~ char params3[3]={0,};
-        //~ char com;
+			printf( "ssid = %s\n", wifi_config.sta.ssid );
+			printf( "passwd = %s\n", wifi_config.sta.password );
 
-        //~ strncpy(command, &in_payload[0], 1);
-        //~ com = (char)strtol(command, NULL, 16);
-        
-        //~ switch (com) {
-            //~ case 0xA : 
-                //~ strncpy(params1, &in_payload[1], 2);
-                //~ strncpy(params2, &in_payload[3], 2);
-                //~ strncpy(params3, &in_payload[5], 2);
-                
-                //~ pattern1 = (char)strtol(params1, NULL, 16);
-                //~ pattern2 = (char)strtol(params2, NULL, 16);
-                //~ pattern3 = (char)strtol(params3, NULL, 16);
+			ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
+			ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
+			ESP_ERROR_CHECK( esp_wifi_start() ); 
+		break;
 
-                //~ newSchedule=true;
-                //~ scheduleDuration=0;
-                //~ ESP_LOGI(GATTS_TAG, "Command A:\nFlaskA: %s\nFlaskB: %s\nFlaskC: %s\n", params1, params2, params3);
-                //~ break;
-            
-            //~ case 0xB :       
-                //~ strncpy(repeat, &in_payload[1], 2);
-                //~ strncpy(schedule, &in_payload[3], 8);
-                //~ strncpy(params1, &in_payload[11], 2);
-                //~ strncpy(params2, &in_payload[13], 2);
-                //~ strncpy(params3, &in_payload[15], 2);
-
-                //~ pattern1 = (char)strtol(params1, NULL, 16);
-                //~ pattern2 = (char)strtol(params2, NULL, 16);
-                //~ pattern3 = (char)strtol(params3, NULL, 16);	
-                
-                //~ scheduleDuration = (char)strtol(repeat, NULL, 10);
-                //~ schedule_bitmap = (uint32_t)strtoul(schedule, NULL, 16);
-
-                //~ newSchedule = true;	
-                //~ ESP_LOGI(GATTS_TAG, "Command B:\nSchedule Duration: %d\nSchedule Pattern:0x%X\nFlaskA: %s\nFlaskB: %s\nFlaskC: %s\n", scheduleDuration, schedule_bitmap, params1, params2, params3);
-                //~ break;
-
-            //~ case 0xC :
-                //~ cancelSchedule = true;
-                //~ ESP_LOGI(GATTS_TAG, "Command C:\nCanel Current Schedule");
-                //~ break;
-            
-            //~ default: 
-                //~ ESP_LOGI(GATTS_TAG, "Wrong command!!");
-                //~ break;
-        //~ }
-        esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, NULL);
-        break;
+	default:
+		printf("Wrong option!");
+	break;
+	}
+		esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, NULL);
+	break;
     }
     case ESP_GATTS_EXEC_WRITE_EVT:
     case ESP_GATTS_MTU_EVT:
@@ -694,25 +567,24 @@ static esp_err_t event_handler_blemode(void *ctx, system_event_t *event)
             break;
         case SYSTEM_EVENT_STA_GOT_IP://wifi connent
             xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
-             //~ err = nvs_set_str(my_handle, "ssid", (char *)sta_config.sta.ssid); //nvs setting.
-			 //~ err = nvs_set_str(my_handle, "pass", (char *)sta_config.sta.password);
+
+			err = nvs_set_str(my_handle, "pass", (char *)wifi_config.sta.password);
+			if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err; 
 			
-			  //~ nvs_commit(my_handle);//Write any pending changes to non-volatile storage
-			  //~ nvs_close(my_handle);
-			  //~ fflush(stdout);
-				//~ if(required_size_ssid==0){
-				 //~ for (int i = 5; i >= 0; i--) {
-					//~ printf("Restarting in %d seconds...\n", i);
-					//~ vTaskDelay(1000 / portTICK_RATE_MS);
-				//~ }
-					//~ esp_restart();//reboot.
-				//~ }    
-				 printf("connect!!!!!\n");
-				 //xTaskCreate(&aws_iot_mqtt_task, "AWS IoT", 8192*2, NULL, 5, NULL);
+			nvs_commit(my_handle);//Write any pending changes to non-volatile storage
+			nvs_close(my_handle);
+			printf("connect!!!!!\n");
+			fflush(stdout);
+			if(required_size_ssid!=0){
+				for (int i = 5; i >= 0; i--) {
+					printf("Restarting in %d seconds...\n", i);
+					vTaskDelay(1000 / portTICK_RATE_MS);
+				}
+				esp_restart();//reboot.
+			}    
 				break;
         case SYSTEM_EVENT_STA_DISCONNECTED://wifi disconnect			
-			printf("disconnect!!!!!!!!!!!!!!!!!\n");
-								
+			printf("disconnect!!!!!!!!!!!!!!!!!\n");						
             /* This is a workaround as ESP32 WiFi libs don't currently
                 auto-reassociate. */
             esp_wifi_connect();
@@ -731,7 +603,7 @@ static esp_err_t event_handler_wifimode(void *ctx, system_event_t *event)
         case SYSTEM_EVENT_STA_START:
             esp_wifi_connect();
             break;
-        case SYSTEM_EVENT_STA_GOT_IP://wifi connent
+        case SYSTEM_EVENT_STA_GOT_IP://wifi connect
             xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
             wifi_disconnect_count=0;
             printf("connect!!!!!wifi_disconnect_count:%d\n",wifi_disconnect_count);
@@ -742,7 +614,7 @@ static esp_err_t event_handler_wifimode(void *ctx, system_event_t *event)
 			if(wifi_disconnect_count==1)
 				countdown_sec(&wifi_disconnect_timeout,30);
 			
-			if(has_timer_expired(&wifi_disconnect_timeout))//이걸 그냥 wifi_disconnect_count 값으로 해도 될듯.
+			if(has_timer_expired(&wifi_disconnect_timeout))
 			{
 				for (int i = 5; i >= 0; i--) {
 					printf("wifi disconnected. Restarting in %d seconds...\n", i);
@@ -772,8 +644,27 @@ static void initialise_wifi_blemode(void)
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-    //~ ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
-    //~ ESP_ERROR_CHECK( esp_wifi_start() );
+}
+
+static void initialise_wifi_wifimode(char * ssid, char * password)
+{
+    tcpip_adapter_init();
+    wifi_event_group = xEventGroupCreate();
+    ESP_ERROR_CHECK( esp_event_loop_init(event_handler_wifimode, NULL) );
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
+    ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
+ 
+    wifi_config_t wifi_config;
+    memset(&wifi_config,0,sizeof(wifi_config));//initialize
+	strcpy((char *)wifi_config.sta.ssid, (char *)ssid);   
+	strcpy((char *)wifi_config.sta.password, (char *)password);
+
+    fprintf(stderr, "Setting WiFi configuration SSID %s...\n", wifi_config.sta.ssid);
+    ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
+    ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
+    ESP_ERROR_CHECK( esp_wifi_start() ); 
+   
 }
 
 
@@ -854,7 +745,7 @@ static void initialise_gpio(void)
     ledc_fade_func_install(0);  
    
     
-	ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 0);//128로 초기화 되어 있기 때문에 0으로 꺼놔야한다.
+	ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 0);
 	ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 0);
 	ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_2, 0);
 	
@@ -868,13 +759,6 @@ static void initialise_gpio(void)
 
 void control_led() {
 for(int i = 0; i < 8; ++i) {
-     //   printf("LEDC set duty without fade: ON\n");
-        // ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 128);
-        // ledc_update_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0);
-        // while(1) {
-        //     vTaskDelay(500 / portTICK_PERIOD_MS);
-        //     printf("Hello\n");
-        // }
         if((pattern1>>(7-i)) & 1){
 			ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 128);
 			ledc_update_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0);
@@ -942,38 +826,9 @@ static void schedule_control(void *pvParameters)
     }
 }
 
-
-
-/**
- *  Controls GPIO.  Patterns are received as bitmaps of 8 bits (SUBJECT TO CHANGE).
- */ //const char pattern1, const char pattern2, const char pattern3 
-
-
-void app_main(){
-    esp_err_t ret;
-    
-    
-    nvs_flash_init();
-    printf("\n");
-    // Open
-    printf("Opening Non-Volatile Storage (NVS) ... ");   
-    err = nvs_open("storage", NVS_READWRITE, &my_handle);
- 
-    if (err != ESP_OK) 
-        printf("Error (%d) opening NVS!\n", err);
-    else {
-        printf("Done\n");       // Read
-        printf("Reading string from NVS ... ");
-
-        err = nvs_get_str(my_handle, "ssid", NULL, &required_size_ssid);
-        if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
-        
-        err = nvs_get_str(my_handle, "pass", NULL, &required_size_pass);        
-        if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
-	}
-    
-    
-    
+static void bluetooth_mode(){
+	esp_err_t ret;
+	   
 	initialise_wifi_blemode();
     esp_bt_controller_init(); // Initialize BT controller.
     ret = esp_bluedroid_init();
@@ -989,10 +844,51 @@ void app_main(){
     esp_ble_gatts_register_callback(gatts_event_handler);
     esp_ble_gap_register_callback(gap_event_handler);
 
-    initialise_gpio();
-    xTaskCreate(&schedule_control, "Schedule Control", 512, NULL, 5, NULL);
-
     esp_ble_gatts_app_register(PROFILE_A_APP_ID);
- 
+	return;
+	}
+
+static void wifi_mode()//wifi mode
+{
+	char* my_ssid = malloc(required_size_ssid);
+	char* my_pass = malloc(required_size_pass);
+	err = nvs_get_str(my_handle, "ssid", my_ssid, &required_size_ssid);//get ssid
+	if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
+	err = nvs_get_str(my_handle, "pass", my_pass, &required_size_pass); //get pass
+	if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
+
+	initialise_wifi_wifimode(my_ssid,my_pass);
+	initialise_gpio();
+	xTaskCreate(&aws_iot_mqtt_task, "AWS IoT", 8192*2, NULL, 5, NULL);
+	xTaskCreate(&schedule_control, "Scheduler",512, NULL, 5, NULL); 		
+}
+
+void app_main(){
+
+    nvs_flash_init();
+    printf("\n");
+    // Open
+    printf("Opening Non-Volatile Storage (NVS) ... ");
+    err = nvs_open("storage", NVS_READWRITE, &my_handle);
+
+    if (err != ESP_OK) 
+        printf("Error (%d) opening NVS!\n", err);
+    else {
+        printf("Done\n");       // Read
+        printf("Reading string from NVS ... ");
+
+        err = nvs_get_str(my_handle, "ssid", NULL, &required_size_ssid);
+        if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
+        if(err == ESP_ERR_NVS_NOT_FOUND)
+			printf("ESP_ERR_NVS_NOT_FOUND");
+		if(err == ESP_OK)
+			printf("ESP_OK");
+        err = nvs_get_str(my_handle, "pass", NULL, &required_size_pass);
+        if (err != ESP_OK && err != ESP_ERR_NVS_NOT_FOUND) return err;
+        if (err == ESP_OK)
+			wifi_mode();
+		else
+			bluetooth_mode();
+		}
     return;
 }
